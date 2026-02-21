@@ -1,78 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Kalakappa | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="protofolio.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalakappa | Developer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#141e30,#243b55);
+    color:white;
+    line-height:1.6;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 10%;
+    background:rgba(0,0,0,0.5);
+}
+
+nav h2{
+    color:#00ffd5;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+}
+
+section{
+    padding:60px 10%;
+}
+
+.hero{
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero span{
+    color:#00ffd5;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 25px;
+    background:#00ffd5;
+    color:black;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.skills .skill{
+    margin:20px 0;
+}
+
+.progress{
+    background:#333;
+    border-radius:20px;
+}
+
+.progress div{
+    background:#00ffd5;
+    padding:8px;
+    border-radius:20px;
+    text-align:right;
+}
+
+.projects{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:10px;
+    width:300px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.contact-box{
+    background:rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.contact-box a{
+    color:#00ffd5;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.6);
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Kalakappa Baliger</h1>
-    <p>ECE Student | Embedded Systems | Web Developer</p>
-</header>
-
 <nav>
-    <a href="#about">About</a>
-    <a href="#interests">Interests</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <h2>Kalakappa</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
+
+<section class="hero">
+    <h1>Hello, I'm <span>Kalakappa</span></h1>
+    <p>Aspiring Software Developer | Web & Embedded Systems Enthusiast</p>
+    <a href="#projects" class="btn">Explore My Work</a>
+</section>
 
 <section id="about">
     <h2>About Me</h2>
     <p>
-        I am an Electronics and Communication Engineering student passionate about 
-        Embedded Systems, VLSI, Arduino projects, API development and 3D printing.
-        I enjoy building practical hardware and software solutions.
+        I am a passionate and self-driven aspiring Software Developer with strong interest 
+        in Web Development and Embedded Systems. I enjoy building both software 
+        applications and hardware-based engineering solutions.
+    </p>
+    <br>
+    <p>
+        My technical journey includes learning HTML, CSS, Git, GitHub, API integration,
+        Ubuntu command line operations, and circuit designing using Tinkercad.
+        I strongly believe in practical learning through projects and continuous improvement.
+    </p>
+
+    <h3>Career Objective</h3>
+    <p>
+        To become a skilled Full Stack Developer and Systems Engineer capable of building 
+        scalable web applications and intelligent hardware systems that solve real-world problems.
     </p>
 </section>
 
-<section id="interests">
-    <h2>My Interests</h2>
-    <div class="grid">
-        <div class="card">Embedded Systems</div>
-        <div class="card">Arduino Projects</div>
-        <div class="card">VLSI Design</div>
-        <div class="card">Web Development</div>
-        <div class="card">3D Printing</div>
-        <div class="card">API Development</div>
+<section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+
+    <div class="skill">
+        <p>HTML - 90%</p>
+        <div class="progress"><div style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>CSS - 80%</p>
+        <div class="progress"><div style="width:80%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Git & GitHub - 75%</p>
+        <div class="progress"><div style="width:75%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>API Integration - 65%</p>
+        <div class="progress"><div style="width:65%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Circuit Designing (Tinkercad) - 70%</p>
+        <div class="progress"><div style="width:70%"></div></div>
     </div>
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
+    <h2>Major Projects</h2>
+    <div class="projects">
 
-    <div class="project-card">
-        <h3>Ultrasonic Radar System</h3>
-        <p>Built using Arduino, Servo Motor and Ultrasonic Sensor to detect objects.</p>
+        <div class="card">
+            <h3>🚨 Fire Alert System</h3>
+            <p>
+                Designed and simulated a fire detection system using sensors in Tinkercad.
+                The system monitors abnormal temperature levels and activates an alert mechanism.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📡 Radar System</h3>
+            <p>
+                Developed a radar detection model using ultrasonic sensor concepts
+                to detect obstacles and calculate distance in real-time.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔌 Circuit Designing</h3>
+            <p>
+                Created multiple digital and analog circuits using Tinkercad,
+                understanding components like resistors, LEDs, sensors, and microcontrollers.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌐 Web Development</h3>
+            <p>
+                Built responsive websites using HTML and CSS.
+                Hosted projects using GitHub Pages with version control using Git.
+            </p>
+        </div>
+
     </div>
-
-    <div class="project-card">
-        <h3>Weather App</h3>
-        <p>Created a weather app using OpenWeather API to fetch real-time temperature.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>3D Printed Motor Plate</h3>
-        <p>Designed and printed a DC motor mounting plate using Tinkercad.</p>
-    </div>
-
 </section>
 
 <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: yourmail@gmail.com</p>
-    <div class="social">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Instagram</a>
+    <h2>Contact Information</h2>
+
+    <div class="contact-box">
+        <p><strong>Name:</strong> Kalakappa</p>
+        <p><strong>Email:</strong> kalki2840@.com</p>
+        <p><strong>Phone:</strong> +91 7349682840</p>
+        <p><strong>GitHub:</strong> 
+            <a href="https://github.com/hackererror22072007-a11y" target="_blank">
+                github.com/hackererror22072007-a11y
+            </a>
+        </p>
+        <p><strong>Location:</strong> Karnataka, India</p>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Kalakappa Baliger | All Rights Reserved</p>
+    <p>© 2026 Kalakappa | Aspiring Software Developer</p>
 </footer>
 
 </body>
