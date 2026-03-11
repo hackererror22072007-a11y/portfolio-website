@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalakappa Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(270deg,#0f2027,#203a43,#2c5364);
+background-size:600% 600%;
+animation:bgMove 12s infinite alternate;
+color:white;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+100%{background-position:100% 50%}
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+position:sticky;
+top:0;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.05);
+}
+
+nav h2{
+color:#00ffff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#00ffff;
+}
+
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+text-align:center;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.typing{
+color:#00ffff;
+margin-top:10px;
+font-size:22px;
+}
+
+.btn{
+margin-top:25px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#00ffff;
+color:black;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:35px;
+}
+
+.about{
+text-align:center;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.skill-card{
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+transition:.3s;
+text-align:center;
+}
+
+.skill-card:hover{
+transform:translateY(-10px);
+background:rgba(0,255,255,0.2);
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.project-card{
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:15px;
+transition:.4s;
+backdrop-filter:blur(10px);
+}
+
+.project-card:hover{
+transform:scale(1.05);
+background:rgba(0,255,255,0.2);
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<h2>Kalakappa</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<h1>Hello, I'm Kalakappa</h1>
+<p class="typing"></p>
+<button class="btn">View My Work</button>
+</div>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<p class="about">
+I am an Electronics and Communication Engineering student passionate about
+Embedded Systems, Artificial Intelligence, and IoT. I enjoy building
+innovative projects that solve real-world problems using technology.
+</p>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill-card">C++</div>
+<div class="skill-card">Python</div>
+<div class="skill-card">Embedded Systems</div>
+<div class="skill-card">Arduino</div>
+<div class="skill-card">ESP32</div>
+<div class="skill-card">Web Development</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="project-card">
+<h3>AI Smart Energy System</h3>
+<p>AI-based system that reduces electricity usage automatically.</p>
+</div>
+
+<div class="project-card">
+<h3>Accident Detection System</h3>
+<p>IoT project that detects accidents and sends emergency alerts.</p>
+</div>
+
+<div class="project-card">
+<h3>ESP32 LED Control</h3>
+<p>Wireless LED control system using ESP32.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+<p>Email: kalakappa@email.com</p>
+<p>GitHub: github.com/kalakappa</p>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Kalakappa Baliger</p>
+</footer>
+
+<script>
+
+const words=[
+"ECE Student",
+"Embedded Systems Developer",
+"AI & IoT Enthusiast",
+"Web Developer"
+]
+
+let i=0
+let j=0
+let currentWord=""
+let isDeleting=false
+
+function type(){
+
+currentWord=words[i]
+
+if(isDeleting){
+document.querySelector(".typing").textContent=currentWord.substring(0,j--)
+}else{
+document.querySelector(".typing").textContent=currentWord.substring(0,j++)
+}
+
+if(!isDeleting && j===currentWord.length){
+isDeleting=true
+setTimeout(type,1000)
+return
+}
+
+if(isDeleting && j===0){
+isDeleting=false
+i=(i+1)%words.length
+}
+
+setTimeout(type,100)
+}
+
+type()
+
+</script>
+
+</body>
+</html>
